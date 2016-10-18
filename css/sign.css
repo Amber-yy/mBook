@@ -204,13 +204,13 @@ input:focus{
     letter-spacing: 0;
   }
 
+  .sign{
+    width: 96%;
+  }
+
   .form_title{
     margin: 1px 0 32px;
     font-size: 16px;
-  }
-
-  .form-control, .btn{
-    width: 96%;
   }
 
   .forget_pwd{
@@ -219,7 +219,7 @@ input:focus{
 }
 
 @media only screen and (max-width: 375px) {
-  .form-control, .btn{
+  .sign{
     width: 86%;
   }
 
