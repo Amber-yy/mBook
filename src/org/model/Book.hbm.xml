@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-10-27 11:35:58 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="org.model.Book" table="book" catalog="mbook" optimistic-lock="version">
+        <id name="bookId" type="java.lang.Integer">
+            <column name="bookId" />
+            <generator class="identity" />
+        </id>
+        <property name="bookName" type="string">
+            <column name="bookName" length="25" />
+        </property>
+        <property name="isbn" type="string">
+            <column name="ISBN" length="25" />
+        </property>
+        <property name="author" type="string">
+            <column name="author" length="25" />
+        </property>
+        <property name="publisher" type="string">
+            <column name="publisher" length="50" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="price" precision="22" scale="0" />
+        </property>
+        <property name="snum" type="java.lang.Integer">
+            <column name="snum" />
+        </property>
+        <property name="summary" type="string">
+            <column name="summary" />
+        </property>
+        <property name="photo" type="string">
+            <column name="photo" />
+        </property>
+        <property name="categoryId" type="java.lang.Integer">
+            <column name="categoryId" />
+        </property>
+    </class>
+</hibernate-mapping>
