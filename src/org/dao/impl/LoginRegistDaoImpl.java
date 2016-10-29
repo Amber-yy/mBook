@@ -1,9 +1,10 @@
 package org.dao.impl;
 
 import org.dao.LoginRegistDao;
-import org.hibernate.Query;
+ 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.model.User;
 
 @SuppressWarnings("deprecation")
