@@ -1,8 +1,8 @@
-package org.dao;
+package org.service;
 
 import org.model.User;
 
-public interface LoginRegistDao {
+public interface LoginRegistService {
 	public User checkInfo(String email); 
 	public boolean  regist(String email,String password);
 }

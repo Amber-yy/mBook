@@ -1,5 +1,12 @@
 package org.test;
 
-public class Test {
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+public class Test {
+ public static void main(String[]args){
+	 ApplicationContext context=new FileSystemXmlApplicationContext("src/applicationContext.xml");
+	 Person p=(Person)context.getBean("man");
+	 p.eatFood();
+ }
 }
