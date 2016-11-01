@@ -1,8 +1,9 @@
 package org.dao.impl;
-import org.hibernate.*;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 public class BaseDao {
 	private SessionFactory sessionFactory;
-	public  SessionFactory getSessionFatory(){
+	SessionFactory getSessionFatory(){
 		return sessionFactory;
 	}
 	 public void setSessionFactory(SessionFactory sessionFactory){

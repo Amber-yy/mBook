@@ -4,15 +4,19 @@
 <!-- Generated 2016-10-27 11:35:58 by Hibernate Tools 4.3.1.Final -->
 <hibernate-mapping>
     <class name="org.model.User" table="user" catalog="mbook" optimistic-lock="version">
+    
         <id name="email" type="string">
             <column name="email" length="25" />
             <generator class="assigned" />
         </id>
         <property name="password" type="string">
-            <column name="password" length="25" />
+            <column name="password" length="25" not-null="true"/>
         </property>
         <property name="isAdmin" type="int">
             <column name="isAdmin" not-null="true" />
+        </property>
+        <property name="userName" type="String">
+            <column name="userName" length="25"  not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

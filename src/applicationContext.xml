@@ -4,15 +4,30 @@ xmlns="http://www.springframework.org/schema/beans"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xmlns:p="http://www.springframework.org/schema/p" 
 xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 	
-	<bean id="man" class="org.test.Man">
-	<property name="food">
-	<ref local="apple"/>
+	<property name="mappingResources">
+	<list>
+	<value>org/model/User.hbm.xml</value>
+	</list>
 	</property>
 	</bean>
-	<bean id="apple" class="org.test.Apple"></bean>
 	
+	<bean id="baseDao" class="org.dao.impl.BaseDao">
+	<property name="sessionFactory"  ref="sessionFactory"></property>
+	</bean>
 	
+	<!-- 通过集成baseDao对各dao进行依赖注入 -->
+	<bean id="userDao" class="org.dao.impl.UserDaoImpl" parent="baseDao"></bean>
 	
+	<!--对业务逻辑进行依赖注入  -->
+	<bean id="userService" class="org.service.impl.UserServiceImpl">
+	<property name="userDao"  ref=" userDao"></property>
+	</bean>
+	
+	<!-- 对显示层进行依赖注入 -->
+	<bean id="userAction" class="org.action.UserAction">
+	<property name="userService"  ref="userService"></property>
+	</bean>
 	
 	</beans>

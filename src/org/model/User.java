@@ -9,6 +9,15 @@ public class User implements java.io.Serializable {
 	private String email;
 	private String password;
 	private int isAdmin;
+	private String userName;
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
 	public User() {
 	}
