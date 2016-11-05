@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+     <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -12,9 +13,11 @@
   <link type="text/css" rel="stylesheet" href="css/common.css">
   <link type="text/css" rel="stylesheet" href="css/index.css">
 </head>
+
 <body onload="reurl()">
   <header id="head">
-    <h2 class="logo"><a href="#">The Library</a></h2>
+    <h2 class="logo"><a href="index.jsp">The Library</a></h2>
+    <s:if test="#session.user==null||#session.user.isEmpty()">
     <div class="sign right">
       <a href="login.jsp" class="login hide-on-med-and-down">Login</a>
       <a href="signUp.jsp" class="logup hide-on-med-and-down">Sign up</a>
@@ -27,6 +30,7 @@
         <li><a href="signUp.jsp">Sign up</a></li>
       </ul>
     </nav>
+    </s:if>
     <div class="head_body">
       <h1 class="head_title">We are what we read</h1>
       <form action="#" method="">

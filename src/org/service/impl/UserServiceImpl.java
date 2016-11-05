@@ -1,26 +1,22 @@
  package org.service.impl;
 
- 
+
+import java.util.List;
 import org.dao.UserDao;
-import org.dao.impl.UserDaoImpl;
 import org.model.User;
 import org.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
  
-
 public class UserServiceImpl implements  UserService {
-	
+	 
 	private UserDao userDao;
-	@Override
-	public User checkInfo(String email) {
-		 return userDao.checkInfo(email);
-	}
-
-	@Override
-	public boolean regist(String email, String password) {
-		 return userDao.regist(email, password);
+	 
+	public List<User> findUserByEmail(String email) {
+		  
+		 return userDao.findUserByEmail(email);
 	}
 	
-	//get/set·½·¨
 	public UserDao getUserDao() {
 		return userDao;
 	}
@@ -28,6 +24,6 @@ public class UserServiceImpl implements  UserService {
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
+ 
 
-   
 }

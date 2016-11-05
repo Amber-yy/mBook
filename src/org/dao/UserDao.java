@@ -1,8 +1,16 @@
 package org.dao;
 
+import java.util.List;
+
 import org.model.User;
 
 public interface UserDao {
-	public User checkInfo(String email); 
-	public boolean  regist(String email,String password);
+
+	 List <User> findUserByEmail(String email);
+	
+	void addUser(User user);
+
+	int deleteUserByEmail(String email);
+
+	int updatePassword(User user);
 }
