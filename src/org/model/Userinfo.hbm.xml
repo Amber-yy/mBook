@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2016-10-27 11:35:58 by Hibernate Tools 4.3.1.Final -->
+<!-- Generated 2016-11-1 19:51:35 by Hibernate Tools 4.3.1.Final -->
 <hibernate-mapping>
     <class name="org.model.Userinfo" table="userinfo" catalog="mbook" optimistic-lock="version">
         <id name="readerId" type="java.lang.Integer">
@@ -18,7 +18,7 @@
             <column name="address" length="50" />
         </property>
         <property name="sex" type="string">
-            <column name="sex" length="8" />
+            <column name="sex" length="8" not-null="true" />
         </property>
         <property name="birthday" type="date">
             <column name="birthday" length="10" />

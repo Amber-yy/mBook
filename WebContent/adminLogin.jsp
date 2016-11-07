@@ -14,12 +14,12 @@
 </head>
 <body onload="reurl()">
   <h1>The Library admin system</h1>
-  <form action="#" method="post">
+  <form action="login" method="post">
     <h2><i class="material-icons icon_input">input</i> Login</h2>
     <button type="submit" class="btn btn-med-up hide-on-small-and-down"><i class="material-icons">vpn_key</i></button>
-    <input type="text" class="user" name="username" placeholder="Username" autofocus="" required="" />
+    <input type="text" class="user" name="user.email" placeholder="Username" autofocus="" required="" />
     <i class="material-icons icon_user">perm_identity</i>
-    <input type="password" class="pwd" name="password" placeholder="Password" required="" />
+    <input type="password" class="pwd" name="user.password" placeholder="Password" required="" />
     <i class="material-icons icon_pwd">lock_outline</i>
     <button type="submit" class="btn btn-small-down hide-on-med-and-up"><i class="material-icons">vpn_key</i></button>
   </form>
