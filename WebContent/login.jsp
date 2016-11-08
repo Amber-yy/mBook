@@ -15,18 +15,17 @@
 </head>
 <body>
   <div class="sign">
-    <a href="index.jsp" class="title"><h1>The Library</h1></a>
-    
+    <a href="index.jsp" class="title"><h1>The Library</h1></a> 
     <s:form id="logIn" action="login" method="post">
      <input type="email"  name="user.email" class="form-control" placeholder="Email / Username" autofocus="" required=""/>
-       
       <div class="pwd">
-        <input  type="password" name="user.password" class="form-control" placeholder="Password" required="" />
-        <a href="forget.jsp" class="forget_pwd">Forget ?</a>
+     <input  type="password" name="user.password" class="form-control" placeholder="Password" required="" />  
+      <a href="forget.jsp" class="forget_pwd">Forget ?</a>
       </div>
-      <div class="form-error"></div>
+      <div class="form-error"><s:fielderror fieldName="message"/></div>
       <button type="submit" class="btn">Log in<i class="icon material-icons">trending_flat</i></button>
       <a href="signUp.jsp" class="login_action">New to The Library ?</a>
+      <input type="hidden" value="0" name="user.isAdmin">
     </s:form>
   </div>
 

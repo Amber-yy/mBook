@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+        <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -11,36 +12,67 @@
   <link type="text/css" rel="stylesheet" href="css/normalize.css">
   <link type="text/css" rel="stylesheet" href="css/common.css">
   <link type="text/css" rel="stylesheet" href="css/sign.css">
+  
+  
 </head>
 <body>
+   
   <div class="sign">
-    <a href="index.html" class="title"><h1>The Library</h1></a>
-    
+    <a href="index.jsp" class="title"><h1>The Library</h1></a>
+      <s:if test="#session.jsMessage==1">
+	     <script type="text/javascript">
+	     window.onload=function(){
+		   $("#signUp_1").formChange();
+	     }
+	     </script>
+	 </s:if>
+	 
+	  <s:if test="#session.jsMessage==2">
+	     <script type="text/javascript">
+	     window.onload=function(){
+		   $("#signUp_2").formChange();
+	     }
+	     </script>
+	 </s:if>
+	 
+	  <s:if test="#session.jsMessage==3">
+	     <script type="text/javascript">
+	     window.onload=function(){
+		   $("#signUp_3").formChange();
+	     }
+	     </script>
+	 </s:if>
+	  
+    <!-- 注册信息检查-->
     <form id="signUp_1" action="signUp1" method="post">
-      <input type="email"  name="user.email" class="form-control form-focu " placeholder="Please input your email" autocomplete="off" autofocus="" required="" />
+     <input type="email"  name="user.email" class="form-control form-focu " placeholder="Please input your email" autocomplete="off" autofocus="" required="" />
+     <s:fielderror fieldName="message"/> 
       <button type="submit" class="btn">Start now<i class="icon material-icons">trending_flat</i></button>
-      <a href="login.html" class="login_action">Already have an account ?</a>
+      <a href="login.jsp" class="login_action">Already have an account ?</a>
     </form>
     
+    
+    <!-- 详细注册 -->
     <form id="signUp_2" action="signUp2" method="post">
       <h4 class="form_title">Sign Up</h4>
-      <input type="email" name="user.email"   class="form-control form-disable" value="1187597142@qq.com" readonly=""/>
-      <input type="text"   name="user.username" class="form-control form-focus" placeholder="your username" autocomplete="off" required="" />
+      <input type="email" name="user.email"   class="form-control  form-disable" value="<%=session.getAttribute("email") %>" readonly=""/>
+      <input type="text"   name="user.userName" class="form-control form-focus" placeholder="your username" autocomplete="off" required="" />
       <input type="password" name="user.password" class="form-control" placeholder="Password ( at least six )" autocomplete="off" required="" />
-      <div class="form-error"></div>
+       <input type="hidden" name="user.isAdmin" />
+       <s:fielderror fieldName="message"/> 
       <button type="submit" class="btn">Create<i class="icon material-icons">trending_flat</i></button>
       <div class="horizontal_line"></div>
       <button type="button" class="btn_extra">Other accounts<i class="icon material-icons">trending_flat</i></button>
     </form>
-    
-    <form id="signUp_3" action="signUp3" method="post">
+   
+    <!-- 登录 -->
+    <form id="signUp_3" action="login" method="post">
       <h4 class="form_title">exists</h4>
-      <input type="email"  name="user.name" class="form-control form-autofill" value="1187597142@qq.com" placeholder="Email / Username" required="" />
+      <input type="email"  name="user.email" class="form-control form-autofill" value="<%=session.getAttribute("email")%>" placeholder="Email / Username" required="" />
       <div class="pwd">
-        <input type="password"  name="user.password" class="form-control form-focus form-autofill" value="123456" placeholder="Password" required="" />
-        <a href="forget.html" class="forget_pwd">Forget ?</a>
+        <input type="password"  name="user.password" class="form-control form-focus form-autofill" value="<%=session.getAttribute("password") %>" placeholder="Password" required="" />
+        <a href="forget.jsp" class="forget_pwd">Forget ?</a>
       </div>
-      <div class="form-error"></div>
       <button type="submit" class="btn">Log in<i class="icon material-icons">trending_flat</i></button>
       <div class="horizontal_line"></div>
       <button type="button" class="btn_extra">Other accounts<i class="icon material-icons">trending_flat</i></button>
@@ -50,5 +82,6 @@
   <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="js/common.js"></script>
   <script type="text/javascript" src="js/sign.js"></script>
+  
 </body>
 </html>
