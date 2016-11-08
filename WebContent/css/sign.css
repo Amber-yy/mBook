@@ -6,8 +6,8 @@ body{
 
 #signUp_2,
 #signUp_3{
-  display: none;
-}
+  display:none;
+  }
 
 .sign{
   max-width: 340px;
@@ -70,7 +70,6 @@ body{
 }
 
 .form-error{
-  display: none;
   margin-top: -10px;
   margin-bottom: 25px;
   padding: 8px 15px;

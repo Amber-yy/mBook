@@ -6,16 +6,26 @@
 <constant name="struts.objectFactory" value="spring"/>
 
 <package name="default" extends="struts-default">
+
 <action name="signUp1" class="loginRegistAction"  method="checkInfo">
-<result name="success">/signUp.jsp</result>
-<result name="input">/signUp.jsp</result>
+	<result name="success" type="redirect">/signUp.jsp</result>
+	<result name="input" >/signUp.jsp</result>
 </action>
 
+<action name="signUp2" class="loginRegistAction"  method="regist">
+	<result name="success" type="redirect">/signUp.jsp</result>
+	<result name="input"  >/signUp.jsp</result>
+</action>
+  
 <action name="login" class="loginRegistAction"  method="login">
 	<result name="success" type="redirect">/index.jsp</result>
-	<result name="admin"  type="redirect">/admin.jsp</result>
 	<result name="input">/login.jsp</result>
-
 </action>
+
+<action name="adminLogin" class="loginRegistAction"  method="adminLogin">
+	<result name="success" type="redirect">/index.jsp</result>
+	<result name="input" type="redirect">/adminLogin.jsp</result>
+</action>
+ 
 </package>
 </struts>

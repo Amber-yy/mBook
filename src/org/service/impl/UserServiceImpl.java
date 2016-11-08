@@ -17,6 +17,11 @@ public class UserServiceImpl implements  UserService {
 		 return userDao.findUserByEmail(email);
 	}
 	
+	public void addUser(User user) {
+		 userDao.addUser(user);
+		
+	}
+	
 	public UserDao getUserDao() {
 		return userDao;
 	}
@@ -24,6 +29,9 @@ public class UserServiceImpl implements  UserService {
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
+
+	 
+	
  
 
 }
