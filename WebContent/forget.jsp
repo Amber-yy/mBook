@@ -14,7 +14,7 @@
 </head>
 <body>
   <div class="sign">
-    <a href="index.html" class="title"><h1>The Library</h1></a>
+   <a href="index.html" class="title"><h1>The Library</h1></a>
     <form action="#" method="">
       <h4 class="form_title">Forget</h4>
       <input type="email" class="form-control" placeholder="Please input your email" required="" />

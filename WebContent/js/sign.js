@@ -3,7 +3,7 @@ jQuery.fn.formChange=function(){
   $(this).siblings("form").hide(); 
   $(this).show();
   $(this).find(".form-focus").focus();
-  $(".form-error").hide();
+//  $(".form-error").hide();
 }
 
 $(".btn_extra").click(function(){
