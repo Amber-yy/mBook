@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+       <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -15,7 +16,16 @@
 </head>
  <body onload="reurl()"> 
   <h1>The Library admin system</h1>
-    <form  action="adminLogin" method="post">
+  
+ <s:if test="#session.jsMessage">
+ <script type="text/javascript">
+ window.onload=function(){
+	  formError();
+   }
+ </script>
+ </s:if>
+ 
+    <form id="adminLogin" action="adminLogin" method="post">
     <h2><i class="material-icons icon_input">input</i> Login</h2>
     <button type="submit" class="btn btn-med-up hide-on-small-and-down"><i class="material-icons">vpn_key</i></button>
     <input type="text" class="user" name="user.email"  placeholder="Username" autofocus="" required="" />
@@ -24,7 +34,7 @@
     <i class="material-icons icon_pwd">lock_outline</i>
     <button type="submit" class="btn btn-small-down hide-on-med-and-up"><i class="material-icons">vpn_key</i></button>
  	<input type="hidden" value="1" name="user.isAdmin">
- 	<div class="form_error"><s:fielderror fieldName="message"/></div>
+ 	 
   </form>
   <footer>
     © 2016-2017 FengShangWuQi, All rights reserved.
