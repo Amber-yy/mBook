@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="img/mBook.png" type="image/x-icon">
+  <title>admin</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet/less" href="less/admin.less">
+</head>
+<body>
+  <aside id="sidebar" class="nano">
+    <div class="nano-content">
+      <div class="logo-container">the library</div>
+      <a href="adminLogin.html" class="compose-button">Hi ~ Admin</a>
+      <menu class="menu-segment">
+        <ul>
+          <li class="active"><a href="#"><span class="ball green"></span>Book<span> (9)</span></a></li>
+          <li><a href="#"><span class="ball green"></span>Add</a></li>
+        </ul>
+      </menu>
+      <div class="separator"></div>
+      <div class="menu-segment">
+        <ul class="labels">
+          <li><a href="#"><span class="ball blue"></span>Role control</a></li>
+        </ul>
+      </div>
+      <div class="bottom-padding"></div>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="overlay"></div>
+    <header class="header">
+      <form class="search-box" action="#" method="get">
+        <input placeholder="Search..."><i class="icon material-icons">search</i>
+      </form>
+      <h1 class="page-title">
+        <a class="sidebar-toggle-btn trigger-toggle-sidebar"><span class="line"></span><span class="line"></span><span class="line"></span><span class="line line-angle1"></span><span class="line line-angle2"></span></a>
+        Book<a><span class="icon glyphicon glyphicon-chevron-down"></span></a>
+      </h1>
+    </header>
+    <div id="main-nano-wrapper" class="nano">
+      <div class="nano-content">
+        <ul class="message-list">
+          <li class="unread">
+            <div class="col col-1">
+              <div class="title">Lucas Kriebel (via Twitter)</div>
+            </div>
+            <div class="col col-2">
+              <div class="subject">Lucas Kriebel (@LucasKriebel) has sent you a direct message on Twitter! &nbsp;&ndash;&nbsp; <span class="teaser">@LucasKriebel - Very cool :) Nicklas, You have a new direct message.</span></div>
+              <div class="date">11:49 am</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <div id="message">
+    <div class="header">
+      <h1 class="page-title">
+        <span class="icon circle-icon glyphicon glyphicon-chevron-left trigger-message-close"></span>
+        9 Lives
+      </h1>
+      <p>author：<span class="title-else">
+        Andrew Hudson</span> date：<span class="title-else">12.09.2010</span> Press：<span class="title-else">Graham Press</span></p>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/less.min.js"></script>
+  <script type="text/javascript" src="js/admin.js"></script>
+</body>
+</html>
