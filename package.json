@@ -1,0 +1,14 @@
+{
+  "name": "mbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files 'css/*.css, less/*.less, js/*.js, *.html'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.17.5"
+  }
+}
