@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2016-11-1 19:51:35 by Hibernate Tools 4.3.1.Final -->
+<!-- Generated 2016-11-10 15:35:54 by Hibernate Tools 4.3.1.Final -->
 <hibernate-mapping>
     <class name="org.model.Book" table="book" catalog="mbook" optimistic-lock="version">
         <id name="bookId" type="java.lang.Integer">
@@ -20,8 +20,17 @@
         <property name="publisher" type="string">
             <column name="publisher" length="50" />
         </property>
+        <property name="page" type="java.lang.Integer">
+            <column name="page" />
+        </property>
+        <property name="pubDate" type="date">
+            <column name="pubDate" length="10" />
+        </property>
         <property name="price" type="java.lang.Double">
-            <column name="price" precision="22" scale="0" />
+            <column name="price" precision="11" />
+        </property>
+        <property name="cnum" type="java.lang.Integer">
+            <column name="cnum" />
         </property>
         <property name="snum" type="java.lang.Integer">
             <column name="snum" />
@@ -29,8 +38,11 @@
         <property name="summary" type="string">
             <column name="summary" />
         </property>
-        <property name="photo" type="string">
-            <column name="photo" />
+        <property name="photoCover" type="string">
+            <column name="photo_cover" />
+        </property>
+        <property name="photoSpine" type="string">
+            <column name="photo_spine" />
         </property>
         <property name="categoryId" type="java.lang.Integer">
             <column name="categoryId" />

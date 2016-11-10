@@ -1,9 +1,9 @@
 
 $(document).ready(function(){
   var img_h =new Array(
-    "img/1.jpg",
-    "img/2.jpg",
-    "img/3.jpg"
+    "img/index/index1.jpg",
+    "img/index/index2.jpg",
+    "img/index/index3.jpg"
   );
   var num_h = 0;
   setInterval(function(){
@@ -14,9 +14,6 @@ $(document).ready(function(){
     }
     $('#head').css('backgroundImage', 'url(' + img_h[num_h] + ')');
   }, 15000);
-
-  var clientHeight = getClientHeight();
-  $('#head').css('height', clientHeight);
 
   $(".menu").click(function(){
     $('.menu_nav').addClass('menu_nav_active');

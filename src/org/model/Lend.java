@@ -1,5 +1,5 @@
 package org.model;
-// Generated 2016-11-1 19:51:35 by Hibernate Tools 4.3.1.Final
+// Generated 2016-11-10 15:35:53 by Hibernate Tools 4.3.1.Final
 
 import java.util.Date;
 

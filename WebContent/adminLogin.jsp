@@ -14,7 +14,7 @@
   <link type="text/css" rel="stylesheet" href="css/adminLogin.css">
  
 </head>
- <body onload="reurl()"> 
+ <body> 
   <h1>The Library admin system</h1>
  <s:if test="#session.admin_error">
 	 <%session.setAttribute("admin_error",false); %>

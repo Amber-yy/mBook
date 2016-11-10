@@ -26,6 +26,11 @@
 	<result name="success" type="redirect">/index.jsp</result>
 	<result name="input"  type="redirect">/adminLogin.jsp</result>
 </action>
+		
+<action name="selectBook" class="bookAction"  method="selectBook">
+	<result name="success" >/preview.jsp</result>
+	<result name="input"  >/index.jsp</result>
+</action>
  
 </package>
 </struts>

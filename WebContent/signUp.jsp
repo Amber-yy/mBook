@@ -19,7 +19,7 @@
       <s:if test="#session.jsMessage==1">
      <%session.setAttribute("jsMessage",1); %>
 	     <script type="text/javascript">
-		     window.onload=function(){
+		       window.onload=function(){
 			   $("#signUp_1").formChange();
 		     }
 	     </script>
