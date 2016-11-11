@@ -268,7 +268,7 @@ a {
 	.overlay {
 		position: absolute;
 		top: 0;
-		left: -10px; // To compensate for slide-in animation white leaking
+		left: -10px;
 		right: 0;
 		bottom: 100%;
 		background: rgba(0,0,0,.4);
@@ -276,7 +276,6 @@ a {
 		opacity: 0;
 		transition-duration: 0s;
 		transition-property: opacity;
-		//transition-delay: .5s;
 
 		.show-main-overlay & {
 			opacity: 1;
@@ -319,7 +318,6 @@ a {
 					transition-delay: .5s;
 				}
 
-
 				.show-sidebar & .line-angle1 {
 					transform: rotate(-120deg);
 				}
@@ -360,7 +358,6 @@ a {
 			height: 40px;
 			position: relative;
 			margin-top: 2em;
-
 
 			input, .icon {
 				transition-duration: .3s;
@@ -413,39 +410,53 @@ a {
 		}
 	}
 
-
-	.action-bar {
-		padding: 20px 60px;
-		border-bottom: 1px solid @color-light-grey;
-		overflow: hidden;
-
-		li {
-			float: left;
-			margin-right: 10px;
-		}
-	}
-
-
 	// Ugly hack because i can't get the damn thing to work!
 	#main-nano-wrapper {
 		position: absolute;
-		top: 220px;
+		top: 184px;
 		bottom: 0;
 		height: auto;
 	}
 
-	.message-list {
-		display: block;
-		margin-bottom: 4em;
-		padding-left: 0;
+	.book-table {
+		width: 100%;
+		border-collapse:collapse;
 
-		li {
+		tr {
 			position: relative;
-			display: block;
 			height: 50px;
 			line-height: 50px;
-			cursor: default;
 			transition-duration: .3s;
+			border: 1px solid #eee;
+
+			&.book-foot {
+				border: 1px solid #fff;
+
+				a {
+					color: #64b5f6;
+
+					&:hover {
+						color: #42a5f5;
+					}
+				}
+			}
+
+			th {
+				text-transform: uppercase;
+			}
+
+			td {
+				max-width: 120px;
+				padding: 0 1em;
+				text-align: center;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+		}
+
+		tbody tr {
+			cursor: pointer;
 
 			&:hover, &.active, &.selected {
 				background: @color-light-grey;
@@ -455,86 +466,9 @@ a {
 			&.active, &.active:hover {
 				box-shadow: inset 5px 0 0 @accent-color;
 			}
-
-			&.unread {
-				font-weight: 600;
-        color: #555;
-			}
-
-			.col {
-				float: left;
-				position: relative;
-			}
-
-			&.blue-dot .col-1 .dot {
-				border-color: @color-blue;
-			}
-			&.orange-dot .col-1 .dot {
-				border-color: @color-orange;
-			}
-			&.green-dot .col-1 .dot {
-				border-color: @color-green;
-			}
-
-			.col-1 {
-				width: 400px;
-
-				.star-toggle, .checkbox-wrapper, .dot {
-					display: block;
-					float: left;
-				}
-
-				.checkbox-wrapper {
-					margin-top: 15px;
-					margin-right: 10px;
-				}
-
-				.star-toggle {
-					margin-top: 15px;
-				}
-
-				.title {
-					position: absolute;
-					top: 0;
-					left: 140px;
-					right: 0;
-
-					text-overflow: ellipsis;
-					overflow: hidden;
-					white-space: nowrap;
-				}
-			}
-			.col-2 {
-				position: absolute;
-				top: 0;
-				left: 400px;
-				right: 0;
-				bottom: 0;
-
-				.subject, .date {
-					position: absolute;
-					top: 0;
-				}
-
-				.subject {
-					left: 0;
-					right: 200px;
-					text-overflow: ellipsis;
-					overflow: hidden;
-					white-space: nowrap;
-				}
-
-				.date {
-					right: 0;
-					width: 200px;
-					padding-left: 80px;
-				}
-			}
 		}
 	}
 }
-
-
 
 #message {
 	position: fixed;
@@ -567,14 +501,16 @@ a {
 			}
 		}
 
-		.title-else{
-			color: @accent-color;
-			cursor: default;
+		.book-info-q {
+			text-transform: uppercase;
 		}
 
-		.grey {
-			margin-left: 10px;
-			color: #999;
+		.book-info-a {
+			color: @accent-color;
+		}
+
+		.book-intro {
+			color: @accent-color;
 		}
 	}
 }
@@ -626,8 +562,6 @@ a {
 		}
 	}
 
-
-
 	.show-sidebar {
 		#sidebar {
 			transform: none;
@@ -637,9 +571,6 @@ a {
 			transform: translateX(@sidebar-width);
 		}
 	}
-
-
-
 
 	.show-message {
 		#main {
@@ -660,7 +591,15 @@ a {
 			float: none;
 			width: 100%;
 			margin-bottom: -110px;
-			margin-top: 70px;
+			margin-top: 3em;
+
+			.icon-search {
+				margin-top: 1.2em;
+			}
+
+			input {
+				margin-top: 2.2em;
+			}
 
 			input, input:focus {
 				width: 100%;
@@ -674,41 +613,11 @@ a {
 
 	#main #main-nano-wrapper {
 		position: absolute;
-		top: 260px;
+		top: 179px;
 		bottom: 0;
 		height: auto;
 	}
-
-
-	#main .message-list li {
-		.col-1 {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 120px;
-			width: auto;
-		}
-		.col-2 {
-			right: 0;
-			left: auto;
-			width: 120px;
-
-			.date {
-				padding-left: 0;
-				position: static;
-			}
-			.subject {
-				display: none;
-			}
-		}
-	}
 }
-
-
-
-
-
 
 /**
  * Nano scroll stuff
@@ -723,7 +632,6 @@ a {
 .nano > .nano-content {
 	position      : absolute;
 	overflow      : scroll;
-	overflow-x    : hidden;
 	top           : 0;
 	right         : 0;
 	bottom        : 0;

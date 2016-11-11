@@ -24,7 +24,7 @@
       <div class="separator"></div>
       <div class="menu-segment">
         <ul class="labels">
-          <li><a href="#"><span class="ball blue"></span>Role control</a></li>
+          <li><a href="#"><span class="ball blue"></span>Role Control</a></li>
         </ul>
       </div>
       <div class="bottom-padding"></div>
@@ -34,7 +34,7 @@
     <div class="overlay"></div>
     <header class="header">
       <form class="search-box" action="#" method="get">
-        <input placeholder="Search..."><i class="icon material-icons">search</i>
+        <input placeholder="Search..."><i class="icon material-icons icon-search">search</i>
       </form>
       <h1 class="page-title">
         <a class="sidebar-toggle-btn trigger-toggle-sidebar"><span class="line"></span><span class="line"></span><span class="line"></span><span class="line line-angle1"></span><span class="line line-angle2"></span></a>
@@ -43,28 +43,123 @@
     </header>
     <div id="main-nano-wrapper" class="nano">
       <div class="nano-content">
-        <ul class="message-list">
-          <li class="unread">
-            <div class="col col-1">
-              <div class="title">Lucas Kriebel (via Twitter)</div>
-            </div>
-            <div class="col col-2">
-              <div class="subject">Lucas Kriebel (@LucasKriebel) has sent you a direct message on Twitter! &nbsp;&ndash;&nbsp; <span class="teaser">@LucasKriebel - Very cool :) Nicklas, You have a new direct message.</span></div>
-              <div class="date">11:49 am</div>
-            </div>
-          </li>
-        </ul>
+        <table class="book-table">
+          <thead>
+            <tr class="book-head">
+              <th>no</th>
+              <th>title</th>
+              <th>author</th>
+              <th>press</th>
+              <th>date</th>
+              <th>stock</th>
+              <th>Lending</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>9 Lives</td>
+              <td>Andrew Hudson</td>
+              <td>Graham Press</td>
+              <td>10-10-2016</td>
+              <td>10</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Life of a worm</td>
+              <td>Will Flores</td>
+              <td>Graham Press</td>
+              <td>10-10-2016</td>
+              <td>10</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Structure and Space</td>
+              <td>Carol Winter</td>
+              <td>Graham Press</td>
+              <td>10-10-2016</td>
+              <td>10</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>The Rock Enigma</td>
+              <td>Walter C. Hamilton</td>
+              <td>Graham Press</td>
+              <td>10-10-2016</td>
+              <td>10</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>An Introduction to Neural Science</td>
+              <td>Simon Abramovich</td>
+              <td>Graham Press</td>
+              <td>10-10-2016</td>
+              <td>10</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Life in Transit</td>
+              <td>Marina Dokova</td>
+              <td>Graham Press</td>
+              <td>10-10-2016</td>
+              <td>10</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Architecture</td>
+              <td>Ryan Cooper</td>
+              <td>Graham Press</td>
+              <td>10-10-2016</td>
+              <td>10</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Lemon Rainbow</td>
+              <td>Christa Hausmann</td>
+              <td>Graham Press</td>
+              <td>10-10-2016</td>
+              <td>10</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Digital Nomads</td>
+              <td>Kenny Garcia</td>
+              <td>Graham Press</td>
+              <td>10-10-2016</td>
+              <td>10</td>
+              <td>3</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="book-foot">
+              <td colspan="7"><a href="#">show more messages</a></td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     </div>
   </main>
   <div id="message">
     <div class="header">
       <h1 class="page-title">
-        <span class="icon circle-icon glyphicon glyphicon-chevron-left trigger-message-close"></span>
-        9 Lives
+        <span class="icon circle-icon glyphicon glyphicon-chevron-left trigger-message-close"></span>9 Lives
       </h1>
-      <p>author：<span class="title-else">
-        Andrew Hudson</span> date：<span class="title-else">12.09.2010</span> Press：<span class="title-else">Graham Press</span></p>
+      <p>
+        <span class="book-info-q">author：</span><span class="book-info-a">Andrew Hudson</span>&nbsp;
+        <span class="book-info-q">press：</span><span class="book-info-a">Graham Press</span>&nbsp;
+        <span class="book-info-q">date：</span><span class="book-info-a">10-10-2016</span>
+      </p>
+      <p class="book-intro">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.
+      </p>
     </div>
   </div>
 
