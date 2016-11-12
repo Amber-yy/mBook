@@ -3,11 +3,9 @@ var smallScreen = smallScreen();
 
 var formError = function(){
   $('form').addAnimate('wobble');
-  
   setTimeout(function (){
     $('form').removeAnimate('wobble');
   }, 500);
-  
   $('.user, .pwd').val("");
 }
 

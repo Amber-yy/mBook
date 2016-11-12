@@ -14,15 +14,15 @@
   <link type="text/css" rel="stylesheet" href="css/adminLogin.css">
  
 </head>
- <body onload="reurl()"> 
+ <body> 
   <h1>The Library admin system</h1>
-  
- <s:if test="#session.jsMessage">
- <script type="text/javascript">
- window.onload=function(){
-	  formError();
-   }
- </script>
+ <s:if test="#session.admin_error">
+	 <%session.setAttribute("admin_error",false); %>
+		 <script type="text/javascript">
+		 window.onload=function(){
+			  formError();
+		   }
+		 </script>
  </s:if>
  
     <form id="adminLogin" action="adminLogin" method="post">

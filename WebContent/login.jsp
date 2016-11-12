@@ -7,22 +7,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login</title>
-
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="css/normalize.css">
   <link type="text/css" rel="stylesheet" href="css/common.css">
   <link type="text/css" rel="stylesheet" href="css/sign.css">
 </head>
 <body>
+<s:if test="#session.login_error">
+<%session.setAttribute("login_error",false); %>
+<script type="text/javascript">
+ window.onload=function(){
+	 var div1 = document.getElementById('form-error');  
+     div1.style.display="inline-block"; 
+   }
+ </script>
+</s:if>
   <div class="sign">
     <a href="index.jsp" class="title"><h1>The Library</h1></a> 
     <s:form id="logIn" action="login" method="post">
-     <input type="email"  name="user.email" class="form-control" placeholder="Email / Username" autofocus="" required=""/>
+     <input type="email"  name="user.email"class="form-control" placeholder="Email / Username" autofocus="" required=""/>
       <div class="pwd">
      <input  type="password" name="user.password" class="form-control" placeholder="Password" required="" />  
       <a href="forget.jsp" class="forget_pwd">Forget ?</a>
       </div>
-      <div class="form-error"><s:fielderror fieldName="message"/></div>
+      <div  id="form-error" class="form-error"><s:fielderror fieldName="message"/></div>
       <button type="submit" class="btn">Log in<i class="icon material-icons">trending_flat</i></button>
       <a href="signUp.jsp" class="login_action">New to The Library ?</a>
       <input type="hidden" value="0" name="user.isAdmin">

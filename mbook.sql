@@ -1,81 +1,78 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
---
--- Host: localhost    Database: mbook
--- ------------------------------------------------------
--- Server version	5.7.9-log
+/*
+Navicat MySQL Data Transfer
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+Source Server         : smallsun
+Source Server Version : 50525
+Source Host           : localhost:3306
+Source Database       : mbook
 
---
--- Table structure for table `book`
---
+Target Server Type    : MYSQL
+Target Server Version : 50525
+File Encoding         : 65001
 
+Date: 2016-11-10 15:33:51
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `book`
+-- ----------------------------
 DROP TABLE IF EXISTS `book`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `book` (
   `bookId` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `bookName` varchar(25) DEFAULT NULL,
   `ISBN` varchar(25) DEFAULT NULL,
   `author` varchar(25) DEFAULT NULL,
   `publisher` varchar(50) DEFAULT NULL,
-  `price` double DEFAULT NULL,
+  `page` int(11) DEFAULT NULL,
+  `pubDate` date DEFAULT NULL,
+  `price` double(11,2) DEFAULT NULL,
+  `cnum` int(11) DEFAULT NULL,
   `snum` int(11) DEFAULT NULL,
   `summary` varchar(255) DEFAULT NULL,
-  `photo` varchar(255) DEFAULT NULL,
+  `photo_cover` varchar(255) DEFAULT NULL,
+  `photo_spine` varchar(255) DEFAULT NULL,
   `categoryId` int(11) DEFAULT NULL,
   PRIMARY KEY (`bookId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `book`
---
+-- ----------------------------
+-- Records of book
+-- ----------------------------
+INSERT INTO `book` VALUES ('1', '9Lives', '1-1-1-1', 'ANDREW HUDSON', 'Springer Press', '123', '2016-11-23', '128.00', '123', '100', 'All for one, one for all. ', 'D:\\javaWeb\\workplace\\mBook\\WebContent\\img\\preview\\', null, '1');
+INSERT INTO `book` VALUES ('2', 'Life of a worm', '2-2-2-2', 'Will FLORES', 'Elsevier Press', '548', '2016-11-17', '585.56', '85', '45', 'Other men live to eat, while I eat to live. ', null, null, '5');
+INSERT INTO `book` VALUES ('3', 'Lemon Rainbow', '3-3-3-3', 'CAROL WINTER', 'Springer Press', '595', '2016-12-22', '86.56', '58', '52', 'Love rules his kingdom without a sword. ', null, null, '5');
+INSERT INTO `book` VALUES ('4', 'Structure and Space', '4-4-4-4', 'WALTER C. HAMILTON', 'Wiley Press', '578', '2016-11-22', '86.23', '85', '63', 'We soon believe what we desire. ', null, null, '4');
+INSERT INTO `book` VALUES ('5', 'The Rock Enigma', '5-5-5-5', 'SIMON ABRAMOVICH', 'Elsevier Press', '876', '2016-11-16', '58.50', '58', '12', 'The darkest hour is that before the dawn. ', null, null, '4');
+INSERT INTO `book` VALUES ('6', 'Life in Transit', '6-6-6-6', 'MARINA DOKOVA', 'Springer Press', '766', '2016-11-29', '54.25', '58', '45', 'Living without an aim is like sailing without a compass. ', null, null, '3');
+INSERT INTO `book` VALUES ('7', ' Neural Science', '7-7-7-7', 'Life COOPER', 'Wiley Press', '687', '2016-11-23', '56.25', '588', '558', 'A bird in the hand is worth two in the bush. ', null, null, '3');
+INSERT INTO `book` VALUES ('8', 'Digital Nomads', '8-8-8-8', 'CHRISTA HAUSMANN', 'Springer Press', '1866', '2016-11-29', '58.00', '88', '66', 'One swallow does not make a summer. ', null, null, '2');
+INSERT INTO `book` VALUES ('9', 'Architecture', '9-9-9-9', 'KENNY GARCIA', 'Elsevier Press', '686', '2016-11-22', '28.22', '55', '33', 'A man may lead a horse to the water, but he cannot make it drink. ', null, null, '1');
 
-LOCK TABLES `book` WRITE;
-/*!40000 ALTER TABLE `book` DISABLE KEYS */;
-/*!40000 ALTER TABLE `book` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `category`
---
-
+-- ----------------------------
+-- Table structure for `category`
+-- ----------------------------
 DROP TABLE IF EXISTS `category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `category` (
   `categoryId` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `categoryName` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`categoryId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `category`
---
+-- ----------------------------
+-- Records of category
+-- ----------------------------
+INSERT INTO `category` VALUES ('1', 'literature');
+INSERT INTO `category` VALUES ('2', 'IT');
+INSERT INTO `category` VALUES ('3', 'novel');
+INSERT INTO `category` VALUES ('4', 'history');
+INSERT INTO `category` VALUES ('5', 'Digital');
 
-LOCK TABLES `category` WRITE;
-/*!40000 ALTER TABLE `category` DISABLE KEYS */;
-/*!40000 ALTER TABLE `category` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `lend`
---
-
+-- ----------------------------
+-- Table structure for `lend`
+-- ----------------------------
 DROP TABLE IF EXISTS `lend`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `lend` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `bookId` int(11) DEFAULT NULL,
@@ -84,75 +81,47 @@ CREATE TABLE `lend` (
   `STime` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `lend`
---
+-- ----------------------------
+-- Records of lend
+-- ----------------------------
 
-LOCK TABLES `lend` WRITE;
-/*!40000 ALTER TABLE `lend` DISABLE KEYS */;
-/*!40000 ALTER TABLE `lend` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `user`
---
-
+-- ----------------------------
+-- Table structure for `user`
+-- ----------------------------
 DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
   `email` varchar(25) NOT NULL,
-  `password` varchar(25) DEFAULT NULL,
+  `userName` varchar(25) NOT NULL,
+  `password` varchar(25) NOT NULL,
   `isAdmin` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `user`
---
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES ('12331@qq.com', 'dwr', 'eqwrqwrr', '0');
+INSERT INTO `user` VALUES ('123@qq.com', '323', '123456', '0');
+INSERT INTO `user` VALUES ('21213@qq.com', '121123', '333333', '0');
+INSERT INTO `user` VALUES ('admin', 'smallsun', '123456', '1');
+INSERT INTO `user` VALUES ('asq123@qq.com', '1333', '2323333', '0');
+INSERT INTO `user` VALUES ('zxx@qq.com', 'qeewq', 'wqeqwewqe', '0');
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `userinfo`
---
-
+-- ----------------------------
+-- Table structure for `userinfo`
+-- ----------------------------
 DROP TABLE IF EXISTS `userinfo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `userinfo` (
   `readerId` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(25) DEFAULT NULL,
   `phoneNo` varchar(25) DEFAULT NULL,
   `address` varchar(50) DEFAULT NULL,
-  `sex` varchar(8) DEFAULT NULL,
+  `sex` varchar(8) NOT NULL,
   `birthday` date DEFAULT NULL,
   PRIMARY KEY (`readerId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `userinfo`
---
-
-LOCK TABLES `userinfo` WRITE;
-/*!40000 ALTER TABLE `userinfo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `userinfo` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2016-10-26 18:58:01
+-- ----------------------------
+-- Records of userinfo
+-- ----------------------------
