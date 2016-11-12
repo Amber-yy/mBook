@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
 
 	var cols = {},
 
-		messageIsOpen = false;
+	messageIsOpen = false;
 
 	cols.showOverlay = function() {
 		$('body').addClass('show-main-overlay');
@@ -75,14 +75,11 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-
 	// This will prevent click from triggering twice when clicking checkbox/label
 
 	$('input[type=checkbox]').on('click', function(e) {
 		e.stopImmediatePropagation();
 	});
-
-
 
 	// When you click the overlay, close everything
 
@@ -92,16 +89,10 @@ jQuery(document).ready(function($) {
 		cols.hideSidebar();
 	});
 
-
-
 	// Enable sexy scrollbars
 	$('.nano').nanoScroller();
 
-
-
-
 	// Search box responsive stuff
-
 	$('.search-box input').on('focus', function() {
 		if($(window).width() <= 1360) {
 			cols.hideMessage();
@@ -109,9 +100,6 @@ jQuery(document).ready(function($) {
 	});
 
 });
-
-
-
 
 /*! nanoScrollerJS - v0.8.0 - 2014
 * http://jamesflorentino.github.com/nanoScrollerJS/
@@ -1034,6 +1022,19 @@ jQuery(document).ready(function($) {
 
 //# sourceMappingURL=jquery.nanoscroller.js.map
 
+function show_confirm(){
+	var r = confirm("delete?");
+	if (r==true){
+	  alert("delete success!");
+		$('.trigger-message-close').click();
+	}
+}
+
+jQuery.fn.exchange=function(){
+  $(this).siblings().hide();
+  $(this).show();
+}
+
 $(document).ready(function(){
 	$(".compose-button").hover(function(){
 		$(".compose-button").text('Logout');
@@ -1044,5 +1045,20 @@ $(document).ready(function(){
 	$('.menu-segment li').click(function(){
 		$('.menu-segment li').removeClass('active');
 		$(this).addClass('active');
+	});
+
+	$('.menu-segment li').click(function(e){
+		e.preventDefault();
+		$('#Title').text($(this).text());
+		$('.menu-segment li').removeClass('active');
+		$(this).addClass('active');
+		$('#'+$(this).text()).exchange();
+	});
+
+	$('#update-action').click(function(e){
+		e.preventDefault();
+		$('#Title').text('Update');
+		$('#Update').exchange();
+		$('.trigger-message-close').click();
 	});
 });

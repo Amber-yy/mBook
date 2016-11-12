@@ -1,0 +1,46 @@
+
+span.badge {
+  position: relative;
+  right: 0;
+  float: right;
+}
+
+span.badge.new {
+  margin-top: 0.7rem;
+  line-height: 1.6rem;
+}
+
+.collection-item {
+  color: #bdbdbd;
+}
+
+.secondary-content {
+  color: #bdbdbd;
+}
+
+.btn {
+  position: absolute;
+  right: 3rem;
+  top: 1.5rem;
+  color: #424242;
+  background-color: transparent;
+  border: 1px solid #424242;
+  box-shadow: none;
+}
+
+.btn:hover {
+  background-color: transparent;
+}
+
+#user {
+  margin-top: 8em;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+ ul li {
+   text-align: left;
+ }

@@ -8,7 +8,8 @@
   <title>admin</title>
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet/less" href="less/admin.less">
+  <link type="text/css" rel="stylesheet" href="css/common.css">
+  <link type="text/css" rel="stylesheet" href="css/admin.css">
 </head>
 <body>
   <aside id="sidebar" class="nano">
@@ -17,137 +18,169 @@
       <a href="adminLogin.html" class="compose-button">Hi ~ Admin</a>
       <menu class="menu-segment">
         <ul>
-          <li class="active"><a href="#"><span class="ball green"></span>Book<span> (9)</span></a></li>
+          <li class="active"><a href="#"><span class="ball green"></span>Book</a></li>
           <li><a href="#"><span class="ball green"></span>Add</a></li>
         </ul>
       </menu>
       <div class="separator"></div>
       <div class="menu-segment">
         <ul class="labels">
-          <li><a href="#"><span class="ball blue"></span>Role Control</a></li>
+          <li><a href="#"><span class="ball blue"></span>Role</a></li>
         </ul>
       </div>
       <div class="bottom-padding"></div>
     </div>
   </aside>
   <main id="main">
-    <div class="overlay"></div>
+    <div class="overlay hide-on-small-and-down"></div>
     <header class="header">
       <form class="search-box" action="#" method="get">
         <input placeholder="Search..."><i class="icon material-icons icon-search">search</i>
       </form>
       <h1 class="page-title">
-        <a class="sidebar-toggle-btn trigger-toggle-sidebar"><span class="line"></span><span class="line"></span><span class="line"></span><span class="line line-angle1"></span><span class="line line-angle2"></span></a>
-        Book<a><span class="icon glyphicon glyphicon-chevron-down"></span></a>
+        <a class="sidebar-toggle-btn trigger-toggle-sidebar hide-on-small-and-down"><span class="line"></span><span class="line"></span><span class="line"></span><span class="line line-angle1"></span><span class="line line-angle2"></span></a>
+        <span id="Title">Book</span>
+        <a><span class="icon glyphicon glyphicon-chevron-down"></span></a>
       </h1>
     </header>
     <div id="main-nano-wrapper" class="nano">
       <div class="nano-content">
-        <table class="book-table">
-          <thead>
-            <tr class="book-head">
-              <th>no</th>
-              <th>title</th>
-              <th>author</th>
-              <th>press</th>
-              <th>date</th>
-              <th>stock</th>
-              <th>Lending</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>9 Lives</td>
-              <td>Andrew Hudson</td>
-              <td>Graham Press</td>
-              <td>10-10-2016</td>
-              <td>10</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Life of a worm</td>
-              <td>Will Flores</td>
-              <td>Graham Press</td>
-              <td>10-10-2016</td>
-              <td>10</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Structure and Space</td>
-              <td>Carol Winter</td>
-              <td>Graham Press</td>
-              <td>10-10-2016</td>
-              <td>10</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>The Rock Enigma</td>
-              <td>Walter C. Hamilton</td>
-              <td>Graham Press</td>
-              <td>10-10-2016</td>
-              <td>10</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>An Introduction to Neural Science</td>
-              <td>Simon Abramovich</td>
-              <td>Graham Press</td>
-              <td>10-10-2016</td>
-              <td>10</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Life in Transit</td>
-              <td>Marina Dokova</td>
-              <td>Graham Press</td>
-              <td>10-10-2016</td>
-              <td>10</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>Architecture</td>
-              <td>Ryan Cooper</td>
-              <td>Graham Press</td>
-              <td>10-10-2016</td>
-              <td>10</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>Lemon Rainbow</td>
-              <td>Christa Hausmann</td>
-              <td>Graham Press</td>
-              <td>10-10-2016</td>
-              <td>10</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>Digital Nomads</td>
-              <td>Kenny Garcia</td>
-              <td>Graham Press</td>
-              <td>10-10-2016</td>
-              <td>10</td>
-              <td>3</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr class="book-foot">
-              <td colspan="7"><a href="#">show more messages</a></td>
-            </tr>
-          </tfoot>
-        </table>
+        <div id="Book">
+          <table class="book-table">
+            <thead>
+              <tr class="book-head">
+                <th>no</th>
+                <th>title</th>
+                <th>author</th>
+                <th>press</th>
+                <th>date</th>
+                <th>stock</th>
+                <th>Lending</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>9 Lives</td>
+                <td>Andrew Hudson</td>
+                <td>Graham Press</td>
+                <td>10-10-2016</td>
+                <td>10</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Life of a worm</td>
+                <td>Will Flores</td>
+                <td>Graham Press</td>
+                <td>10-10-2016</td>
+                <td>10</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Structure and Space</td>
+                <td>Carol Winter</td>
+                <td>Graham Press</td>
+                <td>10-10-2016</td>
+                <td>10</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>The Rock Enigma</td>
+                <td>Walter C. Hamilton</td>
+                <td>Graham Press</td>
+                <td>10-10-2016</td>
+                <td>10</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>An Introduction to Neural Science</td>
+                <td>Simon Abramovich</td>
+                <td>Graham Press</td>
+                <td>10-10-2016</td>
+                <td>10</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Life in Transit</td>
+                <td>Marina Dokova</td>
+                <td>Graham Press</td>
+                <td>10-10-2016</td>
+                <td>10</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Architecture</td>
+                <td>Ryan Cooper</td>
+                <td>Graham Press</td>
+                <td>10-10-2016</td>
+                <td>10</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Lemon Rainbow</td>
+                <td>Christa Hausmann</td>
+                <td>Graham Press</td>
+                <td>10-10-2016</td>
+                <td>10</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Digital Nomads</td>
+                <td>Kenny Garcia</td>
+                <td>Graham Press</td>
+                <td>10-10-2016</td>
+                <td>10</td>
+                <td>3</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="book-foot">
+                <td colspan="7"><a href="#">show more messages</a></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div id="Add">
+          <form action="#" method="post">
+            <input type="text" placeholder="name">
+            <input type="text" placeholder="author">
+            <input type="text" placeholder="press">
+            <input type="date">
+            <input type="number" placeholder="stock">
+            <input type="number" placeholder="Lending">
+            <input type="file" multiple>
+            <textarea placeholder="details" rows="3"></textarea>
+            <textarea placeholder="look inside" rows="7"></textarea>
+            <button type="submit" class="add-submit">submit</button>
+          </form>
+        </div>
+        <div id="Update">
+          <form action="#" method="post">
+            <input type="text" value="9 Lives">
+            <input type="text" value="Andrew Hudson">
+            <input type="text" value="Graham Press">
+            <input type="date" value="10-10-2016">
+            <input type="number" value="10">
+            <input type="number" value="3">
+            <input type="file" multiple>
+            <textarea placeholder="details" rows="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.</textarea>
+            <textarea placeholder="look inside" rows="7"><h3>Portraits</h3><p>Photography (1999 &ndash; 2013)</p><h3>Chapter 9 <span>Nomadic Lifestyle</span></h3><p>Candy canes lollipop macaroon marshmallow gummi bears tiramisu. Dessert croissant cupcake candy canes. Bear claw faworki faworki lemon drops. Faworki marzipan sugar plum jelly-o marzipan cookie.</p><h3>Aa</h3><p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p><h3>Bb</h3><p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p><h3>Cc</h3><p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p><h3>Dd</h3><p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p></textarea>
+            <button type="submit" class="add-submit">submit</button>
+          </form>
+        </div>
+        <div id="Role"></div>
       </div>
     </div>
   </main>
-  <div id="message">
+  <div id="message" class="hide-on-small-and-down">
     <div class="header">
       <h1 class="page-title">
         <span class="icon circle-icon glyphicon glyphicon-chevron-left trigger-message-close"></span>9 Lives
@@ -157,14 +190,46 @@
         <span class="book-info-q">press：</span><span class="book-info-a">Graham Press</span>&nbsp;
         <span class="book-info-q">date：</span><span class="book-info-a">10-10-2016</span>
       </p>
-      <p class="book-intro">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.
-      </p>
+    </div>
+    <div id="message-nano-wrapper" class="nano">
+      <div class="nano-content">
+        <ul class="message-container">
+          <li>
+            <div class="details">
+              <div class="left"><div class="arrow"></div>Look details</div>
+              <div class="right">
+                <a href="#" id="update-action"><i class="material-icons">mode_edit</i></a>
+                <a href="#" onclick="show_confirm()"><i class="material-icons">delete</i></a>
+              </div>
+            </div>
+            <div class="message">
+              <div><img src="img/preview/cover1.svg" alt="book"></div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  							tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <h3>Portraits</h3>
+  						<p>Photography (1999 &ndash; 2013)</p>
+              <h3>
+    						Chapter 9 <span>Nomadic Lifestyle</span>
+    					</h3>
+              <p>Candy canes lollipop macaroon marshmallow gummi bears tiramisu. Dessert croissant cupcake candy canes. Bear claw faworki faworki lemon drops. Faworki marzipan sugar plum jelly-o marzipan cookie.</p>
+              <h3>Aa</h3>
+  						<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+              <h3>Bb</h3>
+  						<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+              <h3>Cc</h3>
+  						<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+              <h3>Dd</h3>
+  						<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript" src="js/less.min.js"></script>
   <script type="text/javascript" src="js/admin.js"></script>
 </body>
 </html>
